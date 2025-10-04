@@ -87,7 +87,7 @@
   font-weight: 600;
 }
 
-/* Optional: style first/last buttons (<, >) */
+
 .p-paginator .p-paginator-prev,
 .p-paginator .p-paginator-next {
   min-width: 2rem;
@@ -110,7 +110,7 @@
   color: #1d4ed8;
 }
 
-/* Add top margin to paginator */
+
 .p-paginator {
   margin-top: 3rem; 
 }

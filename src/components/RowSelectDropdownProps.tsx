@@ -1,18 +1,31 @@
 // src/components/RowSelectDropdown.tsx
 import React, { useState, useRef, useEffect } from "react";
 
+
+// Props interface (TypeScript) for this component
+// - onSubmit: function that gets called with the number user enters
+// - onClose: function that closes the dropdown
 interface RowSelectDropdownProps {
   onSubmit: (value: number) => void;
   onClose: () => void;
 }
 
+
+// Functional component definition
 const RowSelectDropdown: React.FC<RowSelectDropdownProps> = ({ onSubmit, onClose }) => {
+
+   // Local state to store user input from the textbox
   const [value, setValue] = useState("");
+
+  // Ref to the dropdown DOM element (used for click outside detection)
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close if clicked outside
+   // Effect: Detect clicks outside the dropdown and close it
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      
+      // If click is outside the dropdown, call onClose()
+  
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         onClose();
       }
